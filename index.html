@@ -76,6 +76,7 @@
   /* Bloc résultat direct */
   .place{font-size:14px;color:var(--muted);margin:26px 0 2px}
   .place strong{color:var(--fg);font-weight:600}
+  .fnote{color:var(--muted);font-size:11px;line-height:1.5;margin:2px 0 14px;max-width:64ch}
   .bigtemp{font-family:var(--mono);font-size:74px;line-height:.95;font-weight:500;letter-spacing:-.02em}
   .bigtemp .u{font-size:30px;color:var(--muted);margin-left:4px}
   .verdict{font-size:16px;margin-top:10px}
@@ -568,7 +569,7 @@ async function sampleForecast(pts,onProg){
     const c=pts.slice(i,i+STEP);
     const la=c.map(p=>p.la.toFixed(4)).join(","), lo=c.map(p=>p.lo.toFixed(4)).join(",");
     const j=await getJSON(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}`
-      +`&hourly=temperature_2m&forecast_days=3&timezone=${encodeURIComponent(S.tz)}`);
+      +`&hourly=temperature_2m&models=meteofrance_seamless&forecast_days=3&timezone=${encodeURIComponent(S.tz)}`);
     const arr=Array.isArray(j)?j:[j];
     arr.forEach((r,k)=>{
       if(!r.hourly) return;
@@ -606,7 +607,7 @@ async function runFc(){
     let rows=await aromeForecast(S.lat,S.lon);
     let aromeOK=rows.length>0;
     if(!aromeOK){ // hors couverture AROME → repli best_match
-      const j=await getJSON(`https://api.open-meteo.com/v1/forecast?latitude=${S.lat}&longitude=${S.lon}&hourly=temperature_2m&forecast_days=3&timezone=${encodeURIComponent(S.tz)}`);
+      const j=await getJSON(`https://api.open-meteo.com/v1/forecast?latitude=${S.lat}&longitude=${S.lon}&hourly=temperature_2m&models=meteofrance_seamless&forecast_days=3&timezone=${encodeURIComponent(S.tz)}`);
       rows=j.hourly.time.map((t,i)=>({iso:t,temp:j.hourly.temperature_2m[i]})).filter(r=>r.temp!=null);
     }
     rows.forEach(r=>{ r.date=r.iso.slice(0,10); r.hour=parseInt(r.iso.slice(11,13),10); });
@@ -627,6 +628,7 @@ async function renderFc(){
 
   // scroller horaire
   let scr=`<div class="place">Prévisions <strong>${S.name}</strong>${S.alt!=null?` · ${Math.round(S.alt)} m`:""} · ${aromeOK?"AROME France HD":"modèle global (hors couverture AROME)"} · normale ${f1(S.normMean)} °C</div>`;
+  scr+=`<div class="fnote">Données de prévision AROME HD / Météo‑France (via Open‑Meteo), publiées telles quelles.</div>`;
   scr+=`<div class="scroller">`;
   let lastDate=null;
   rows.forEach(r=>{
