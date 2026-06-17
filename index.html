@@ -22,13 +22,13 @@
   body{-webkit-font-smoothing:antialiased;line-height:1.45}
   a{color:inherit}
   ::selection{background:#fff;color:#000}
-
+ 
   .wrap{max-width:760px;margin:0 auto;padding:34px 22px 90px}
-
+ 
   header{display:flex;flex-direction:column;gap:6px;margin-bottom:26px}
   .title{font-size:13px;letter-spacing:.42em;text-transform:uppercase;font-weight:600}
   .tagline{color:var(--muted);font-size:13px;max-width:54ch}
-
+ 
   /* Recherche */
   .search{position:relative}
   .searchbar{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden}
@@ -52,7 +52,7 @@
   .suggest div:hover,.suggest div.active{background:#fff;color:#000}
   .suggest .sub{color:var(--muted);font-size:12px}
   .suggest div:hover .sub,.suggest div.active .sub{color:#333}
-
+ 
   /* Onglets de mode */
   .modes{display:flex;gap:0;margin:22px 0 4px;border:1px solid var(--line);border-radius:2px;width:max-content}
   .modes button{
@@ -65,14 +65,14 @@
   .crit-lbl{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
   .crit button{border:1px solid var(--line);border-radius:2px}
   .crit button + button{border-left:1px solid var(--line)}
-
+ 
   .status{color:var(--muted);font-size:13px;font-family:var(--mono);margin-top:20px;min-height:18px}
   .status.err{color:var(--hot)}
   .prog{margin-top:16px}
   .prog-lbl{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:7px}
   .prog-track{height:3px;background:var(--line);border-radius:2px;overflow:hidden}
   .prog-fill{height:100%;width:0;background:#fff;transition:width .25s ease}
-
+ 
   /* Bloc résultat direct */
   .place{font-size:14px;color:var(--muted);margin:26px 0 2px}
   .place strong{color:var(--fg);font-weight:600}
@@ -82,7 +82,7 @@
   .verdict{font-size:16px;margin-top:10px}
   .verdict .delta{font-family:var(--mono);font-weight:600}
   .hot{color:var(--hot)} .cool{color:var(--cool)}
-
+ 
   /* Échelle / signature */
   .scale{margin:28px 0 6px}
   .scale-track{position:relative;height:2px;background:var(--line);margin:30px 0 26px}
@@ -93,7 +93,7 @@
   .scale-cur .lab{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
     font-family:var(--mono);font-size:11px;white-space:nowrap}
   .scale-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--muted)}
-
+ 
   /* Carte distance */
   .card{border:1px solid var(--line);border-radius:2px;padding:18px 18px;margin-top:24px}
   .card .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -103,19 +103,19 @@
   .card .where .dir{color:var(--muted);font-family:var(--mono);font-size:12px;margin-left:6px}
   .card.ok{border-color:rgba(90,169,255,.4)}
   .card.ok .lbl{color:var(--cool)}
-
+ 
   /* Prévisions */
   .fday{border-top:1px solid var(--line);padding:20px 0}
   .fday:first-of-type{border-top:0}
   .fday h3{margin:0 0 4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
   .seg{display:flex;flex-wrap:wrap;gap:18px;align-items:baseline;margin:10px 0}
-  .seg .ttl{font-family:var(--mono);font-size:11px;color:var(--muted);width:54px;flex:none}
+  .seg .ttl{font-family:var(--mono);font-size:11px;color:var(--muted);width:78px;flex:none}
   .seg .t{font-family:var(--mono);font-size:26px;font-weight:500}
   .seg .t .u{font-size:13px;color:var(--muted)}
   .seg .d{font-size:13px}
   .seg .dist{font-size:13px;color:var(--muted)}
   .seg .dist b{color:var(--fg);font-weight:600;font-family:var(--mono)}
-
+ 
   .scroller{display:flex;gap:0;overflow-x:auto;border:1px solid var(--line);border-radius:2px;margin:6px 0 4px;
     scrollbar-width:thin;scrollbar-color:#333 transparent}
   .scroller::-webkit-scrollbar{height:6px}
@@ -125,7 +125,7 @@
   .hcell.daybreak{border-left:1px solid rgba(255,255,255,.35)}
   .hcell .h{font-family:var(--mono);font-size:10px;color:var(--muted)}
   .hcell .v{font-family:var(--mono);font-size:15px;margin-top:5px}
-
+ 
   .foot{margin-top:46px;color:var(--muted);font-size:11px;font-family:var(--mono);line-height:1.7;border-top:1px solid var(--line);padding-top:16px}
   /* Cartes */
   .map{height:360px;border:1px solid var(--line);border-radius:2px;margin-top:24px;background:#000}
@@ -157,7 +157,7 @@
     <div class="title">Écart</div>
     <div class="tagline">Où en est votre ville par rapport aux normales de saison — et jusqu'où il faudrait aller pour retrouver ces normales.</div>
   </header>
-
+ 
   <div class="search">
     <div class="searchbar">
       <input id="q" type="text" autocomplete="off" placeholder="Entrez une ville">
@@ -165,48 +165,48 @@
     </div>
     <div id="suggest" class="suggest hidden"></div>
   </div>
-
+ 
   <div class="modes" id="modes" hidden>
     <button data-mode="live" class="on">Direct</button>
     <button data-mode="fc">Prévisions 51 h · AROME HD</button>
   </div>
-
+ 
   <div class="modes crit" id="crit" hidden>
     <span class="crit-lbl">Critère B :</span>
     <button data-crit="prox" class="on">Au plus proche</button>
     <button data-crit="alt">À altitude comparable</button>
   </div>
-
+ 
   <div id="status" class="status"></div>
   <div id="prog" class="prog hidden">
     <div class="prog-lbl"></div>
     <div class="prog-track"><div class="prog-fill"></div></div>
   </div>
-
+ 
   <section id="live" class="hidden"></section>
   <section id="fc" class="hidden"></section>
-
+ 
   <div class="foot">
     Données : Open‑Meteo — temps réel & prévisions AROME France HD (1,5 km, ~51 h), normales calculées sur l'archive ERA5 1991‑2020 (fenêtre ±7 j). Géocodage inverse : BigDataCloud. Outil de sensibilisation, sans valeur officielle.
   </div>
 </div>
-
+ 
 <script>
 "use strict";
-
+ 
 /* ---------- état ---------- */
-const S = { lat:null, lon:null, name:"", alt:null, tz:"auto",
+const S = { lat:null, lon:null, name:"", alt:null, tz:"auto", curHour:null,
             cur:null, normMean:null, normMax:null, normMin:null,
             distMode:"prox", livePts:null, fcRows:null, fcSample:null, fcAromeOK:false,
             mode:"live", liveDone:false, fcDone:false };
-
+ 
 const $ = s => document.querySelector(s);
 const status = (t, err=false)=>{ const e=$("#status"); e.textContent=t; e.className="status"+(err?" err":""); };
 const spin = t => `<span class="spin">◐</span> ${t}`;
 function showProg(label){ const p=$("#prog"); p.classList.remove("hidden"); p.querySelector(".prog-lbl").textContent=label; p.querySelector(".prog-fill").style.width="0%"; status(""); }
 function setProg(frac){ const f=$("#prog").querySelector(".prog-fill"); if(f) f.style.width=Math.round(frac*100)+"%"; }
 function hideProg(){ $("#prog").classList.add("hidden"); }
-
+ 
 /* ---------- géométrie ---------- */
 const R = 6371;
 const toR = d => d*Math.PI/180, toD = r => r*180/Math.PI;
@@ -228,11 +228,11 @@ function bearing(la1,lo1,la2,lo2){
 }
 const CARD=["N","NE","E","SE","S","SO","O","NO"];
 const cardinal = b => CARD[Math.round(b/45)%8];
-
+ 
 /* ---------- cartes ---------- */
 let LIVE_MAPS=[], FC_MAPS=[];
 function destroyMaps(){ [...LIVE_MAPS,...FC_MAPS].forEach(m=>{try{m.remove();}catch(_){}}); LIVE_MAPS=[]; FC_MAPS=[]; }
-
+ 
 /* ---------- champ continu (isothermes) ---------- */
 /* ÉCHELLE ABSOLUE en °C — rigueur scientifique : une même température = une même couleur partout */
 const ABS_STOPS=[[-20,[40,30,80]],[-10,[40,70,160]],[-5,[50,110,205]],[0,[70,150,225]],
@@ -318,36 +318,36 @@ function drawIsolines(map,T,N,s,w,n,e,normal,rich){
       .bindTooltip(`isotherme = normale de ${S.name} · ${f1(normal)} °C`,{sticky:true});
   }
 }
-
+ 
 /* construit une carte : champ de T° réelles + isothermes + A, B et le trait A→B */
 function renderMap(id, origin, originTemp, points, normal, found, rich=false){
   const el=document.getElementById(id); if(!el) return null;
   const map=L.map(id,{zoomControl:true,attributionControl:true,scrollWheelZoom:false,maxBoundsViscosity:1.0});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
     {subdomains:'abcd',maxZoom:18,attribution:'© OpenStreetMap, © CARTO'}).addTo(map);
-
+ 
   const pts=(points||[]).filter(p=>p.temp!=null);
   map.invalidateSize();
-
+ 
   if(pts.length>=4){
     // emprise réellement couverte par les données (bbox de la grille)
     const gs=Math.min(...pts.map(p=>p.la)), gn=Math.max(...pts.map(p=>p.la));
     const gw=Math.min(...pts.map(p=>p.lo)), ge=Math.max(...pts.map(p=>p.lo));
     const gridBounds=[[gs,gw],[gn,ge]];
-
+ 
     // champ sur TOUTE l'emprise des données réelles -> remplit le cadre
     const N=rich?160:120;
     const {url,T}=buildField(pts,gs,gw,gn,ge,N);
     L.imageOverlay(url,gridBounds,{opacity:.38,interactive:false}).addTo(map);
     drawIsolines(map,T,N,gs,gw,gn,ge,normal,rich);
-
+ 
     // cadrage initial sur A + B (marge), borné aux données
     let lats=[origin.la], lons=[origin.lo]; if(found){lats.push(found.la);lons.push(found.lo);}
     let s=Math.min(...lats),n=Math.max(...lats),w=Math.min(...lons),e=Math.max(...lons);
     const padLa=Math.max((n-s)*0.25,0.7), padLo=Math.max((e-w)*0.25,0.9);
     s=Math.max(gs,s-padLa); n=Math.min(gn,n+padLa); w=Math.max(gw,w-padLo); e=Math.min(ge,e+padLo);
     map.fitBounds([[s,w],[n,e]],{padding:[4,4],maxZoom:9});
-
+ 
     // VERROUILLAGE : pan limité aux données + dézoom interdit au-delà du remplissage du cadre
     map.setMaxBounds(gridBounds);
     const coverZoom=map.getBoundsZoom(gridBounds,true);   // zoom mini où les couleurs remplissent le cadre
@@ -356,12 +356,12 @@ function renderMap(id, origin, originTemp, points, normal, found, rich=false){
   } else {
     map.setView([origin.la,origin.lo],7);
   }
-
+ 
   // A — la ville
   const altA = (S.alt!=null)?` · ${Math.round(S.alt)} m`:"";
   L.circleMarker([origin.la,origin.lo],{radius:7,color:'#fff',weight:2,fillColor:'#000',fillOpacity:1})
     .bindTooltip(`A · ${S.name} · ${f1(originTemp)} °C${altA}`,{permanent:true,direction:'right',className:'mlab',offset:[8,0]}).addTo(map);
-
+ 
   // B + trait
   if(found){
     const altB=(found.elev!=null)?` · ${Math.round(found.elev)} m`:"";
@@ -370,11 +370,11 @@ function renderMap(id, origin, originTemp, points, normal, found, rich=false){
     L.polyline([[origin.la,origin.lo],[found.la,found.lo]],{color:'#fff',weight:1.8,opacity:.95,dashArray:'6 4'})
       .bindTooltip(`${found.dist} km`,{sticky:true}).addTo(map);
   }
-
+ 
   setTimeout(()=>map.invalidateSize(),60);
   return map;
 }
-
+ 
 /* ---------- réseau ---------- */
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function getJSON(url){
@@ -397,7 +397,7 @@ async function getJSON(url){
   throw new Error("429 — trop de requêtes, patientez ~1 min puis relancez");
 }
 const f1 = x => Math.round(x*10)/10;
-
+ 
 /* géocodage direct */
 async function geocode(name){
   const u=`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=6&language=fr&format=json`;
@@ -410,14 +410,15 @@ async function reverse(la,lo){
     return j.city||j.locality||j.principalSubdivision||j.countryName||"lieu inconnu";
   }catch(e){ return "lieu inconnu"; }
 }
-
+ 
 /* temps réel d'un point */
 async function current(la,lo){
   const j=await getJSON(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m&timezone=auto`);
   S.tz=j.timezone||"auto";
+  if(j.current && j.current.time) S.curHour=parseInt(j.current.time.slice(11,13),10);
   return j.current.temperature_2m;
 }
-
+ 
 /* normales via archive ERA5 1991-2020, fenêtre ±7 j */
 async function normals(la,lo){
   const u=`https://archive-api.open-meteo.com/v1/archive?latitude=${la}&longitude=${lo}`
@@ -435,7 +436,16 @@ async function normals(la,lo){
   return { mean:sm/c, max:sx/c, min:sn/c };
 }
 function doy(d){ const s=new Date(d.getFullYear(),0,0); return Math.floor((d-s)/864e5); }
-
+/* normale de saison résolue à l'heure h (cycle diurne : mini ~5h, maxi ~15h) */
+function diurnalNormal(h){
+  if(S.normMin==null||S.normMax==null) return S.normMean;
+  if(h==null) h=12;
+  const tmin=5, tmax=15; let frac;
+  if(h>=tmin && h<=tmax) frac=Math.sin((Math.PI/2)*(h-tmin)/(tmax-tmin));        // montée 0→1
+  else { const dh=((h-tmax)+24)%24; frac=Math.cos((Math.PI/2)*dh/(24-(tmax-tmin))); } // descente 1→0
+  return S.normMin + (S.normMax-S.normMin)*frac;
+}
+ 
 /* grille RÉGULIÈRE (maillage rectangulaire) — supprime les artefacts en cercles */
 function gridReg(la,lo,halfDeg,stepDeg){
   const pts=[]; const coslat=Math.max(0.25,Math.cos(toR(la)));
@@ -462,7 +472,7 @@ async function currentBatch(pts,onProg){
   }
   return out;
 }
-
+ 
 /* ---------- MODE DIRECT ---------- */
 /* choix de B : "prox" = au plus proche ; "alt" = à altitude comparable (puis au plus proche) */
 function selectB(pts,nrm){
@@ -475,12 +485,12 @@ function selectB(pts,nrm){
   const p=cand[0];
   return {la:p.la,lo:p.lo,dist:Math.round(p.dist/5)*5,temp:p.temp,elev:p.elev};
 }
-
+ 
 async function runLive(){
   status(spin("relevé en cours…"));
   if(S.cur===null){ S.cur=await current(S.lat,S.lon); }
   if(S.normMean===null){ const n=await normals(S.lat,S.lon); S.normMean=n.mean; S.normMax=n.max; S.normMin=n.min; }
-  const above=(S.cur-S.normMean)>0.05;
+  const above=(S.cur-diurnalNormal(S.curHour))>0.05;
   if(above && S.livePts===null){
     showProg("Chargement des températures réelles de l'emprise…");
     S.livePts=await currentBatch(gridReg(S.lat,S.lon,8,1.3), f=>setProg(f));  // ~13×13 = 169 points, ~880 km
@@ -489,21 +499,22 @@ async function runLive(){
   await renderLive();
   status(""); S.liveDone=true;
 }
-
+ 
 async function renderLive(){
   LIVE_MAPS.forEach(m=>{try{m.remove();}catch(_){}}); LIVE_MAPS=[];
-  const cur=S.cur, nrm=S.normMean, delta=cur-nrm, above=delta>0.05;
+  const cur=S.cur, nrm=diurnalNormal(S.curHour), delta=cur-nrm, above=delta>0.05;
+  const hh=(S.curHour!=null?S.curHour:12);
   const span=12, lo=nrm-span, hi=nrm+span;
   const pos=Math.max(0,Math.min(100,((cur-lo)/(hi-lo))*100));
   const col=above?"var(--hot)":"var(--cool)";
-
+ 
   $("#live").innerHTML = `
-    <div class="place">Relevé pour <strong>${S.name}</strong>${S.alt!=null?` · ${Math.round(S.alt)} m`:""} · maintenant</div>
+    <div class="place">Relevé pour <strong>${S.name}</strong>${S.alt!=null?` · ${Math.round(S.alt)} m`:""} · ${hh}h (heure locale)</div>
     <div class="bigtemp">${f1(cur)}<span class="u">°C</span></div>
     <div class="verdict">
       ${above
-        ? `Soit <span class="delta hot">+${f1(delta)} °C</span> au-dessus de la normale de saison (${f1(nrm)} °C).`
-        : `<span class="delta cool">${delta>=-0.05?"Conforme à":"Sous"} la normale de saison</span> (${f1(nrm)} °C). Aucune anomalie de chaleur.`}
+        ? `Soit <span class="delta hot">+${f1(delta)} °C</span> au-dessus de la normale de saison à ${hh}h (${f1(nrm)} °C).`
+        : `<span class="delta cool">${delta>=-0.05?"Conforme à":"Sous"} la normale de saison à ${hh}h</span> (${f1(nrm)} °C). Aucune anomalie de chaleur.`}
     </div>
     <div class="scale">
       <div class="scale-track">
@@ -515,14 +526,14 @@ async function renderLive(){
       <div class="scale-ends"><span>${f1(lo)}°</span><span>${f1(hi)}°</span></div>
     </div>`;
   $("#live").classList.remove("hidden");
-
+ 
   if(!above){
     $("#live").insertAdjacentHTML("beforeend",
       `<div class="card ok"><div class="lbl">Distance aux normales</div>
        <div class="where">Vous êtes déjà aux conditions de saison — aucun déplacement nécessaire.</div></div>`);
     return;
   }
-
+ 
   const B0=selectB(S.livePts||[],nrm);
   let B=null, cardHtml;
   if(B0){
@@ -539,7 +550,7 @@ async function renderLive(){
       <div class="where">Aucun point à ${f1(nrm)} °C dans un rayon de ~880 km : la chaleur couvre toute la zone explorée.</div></div>`;
   }
   $("#live").insertAdjacentHTML("beforeend",cardHtml);
-
+ 
   const grad=`linear-gradient(90deg,${[0,5,10,15,20,25,30,35,40,45].map(t=>`rgb(${absColor(t).join(',')})`).join(',')})`;
   $("#live").insertAdjacentHTML("beforeend",
     `<div class="map" id="livemap"></div>
@@ -551,7 +562,7 @@ async function renderLive(){
      </div>`);
   LIVE_MAPS.push(renderMap("livemap",{la:S.lat,lo:S.lon},cur,S.livePts||[],nrm,B,true));
 }
-
+ 
 /* ---------- MODE PRÉVISIONS (AROME HD) ---------- */
 async function aromeForecast(la,lo){
   const u=`https://api.open-meteo.com/v1/meteofrance?latitude=${la}&longitude=${lo}`
@@ -597,12 +608,12 @@ async function nearestAt(iso,target,sampleMap){
   const p=cand[0]; const nm=await reverse(p.la,p.lo);
   return { la:p.la, lo:p.lo, dist:Math.round(p.dist/5)*5, name:nm, dir:cardinal(bearing(S.lat,S.lon,p.la,p.lo)), temp:p.temp, elev:p.elev };
 }
-
+ 
 async function runFc(){
   status(spin("chargement AROME HD…"));
   if(S.normMean===null){ const n=await normals(S.lat,S.lon); S.normMean=n.mean; S.normMax=n.max; S.normMin=n.min; }
   if(S.tz==="auto"){ await current(S.lat,S.lon); } // récupère le fuseau
-
+ 
   if(S.fcRows===null){
     let rows=await aromeForecast(S.lat,S.lon);
     let aromeOK=rows.length>0;
@@ -621,11 +632,11 @@ async function runFc(){
   await renderFc();
   status(""); S.fcDone=true;
 }
-
+ 
 async function renderFc(){
   FC_MAPS.forEach(m=>{try{m.remove();}catch(_){}}); FC_MAPS=[];
   const rows=S.fcRows, aromeOK=S.fcAromeOK, sample=S.fcSample;
-
+ 
   // scroller horaire
   let scr=`<div class="place">Prévisions <strong>${S.name}</strong>${S.alt!=null?` · ${Math.round(S.alt)} m`:""} · ${aromeOK?"AROME France HD":"modèle global (hors couverture AROME)"} · normale ${f1(S.normMean)} °C</div>`;
   scr+=`<div class="fnote">Données de prévision AROME HD / Météo‑France (via Open‑Meteo), publiées telles quelles.</div>`;
@@ -639,7 +650,7 @@ async function renderFc(){
   });
   scr+=`</div>`;
   $("#fc").innerHTML=scr; $("#fc").classList.remove("hidden");
-
+ 
   const dates=[...new Set(rows.map(r=>r.date))].sort();
   let out="", mapDescs=[];
   for(const d of dates){
@@ -647,7 +658,7 @@ async function renderFc(){
     const lbl=dObj.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
     const dayR=rows.filter(r=>r.date===d && r.hour>=7 && r.hour<=20);
     const nightR=rows.filter(r=> (r.date===d && r.hour>=21) || (r.date===nextDay(d) && r.hour<=6) );
-
+ 
     let block=`<div class="fday"><h3>${lbl}</h3>`;
     if(dayR.length){
       const mx=dayR.reduce((a,b)=>b.temp>a.temp?b:a);
@@ -666,7 +677,7 @@ async function renderFc(){
   }
 }
 const nextDay = d => { const x=new Date(d+"T00:00:00"); x.setDate(x.getDate()+1); return x.toISOString().slice(0,10); };
-
+ 
 async function segHTML(label, ext, norm, sample, date){
   const delta=ext.temp-norm, above=delta>0.05;
   let dist="", mapHtml="", map=null;
@@ -684,12 +695,12 @@ async function segHTML(label, ext, norm, sample, date){
   const dtxt = above
     ? `<span class="d hot">+${f1(delta)} °C vs normale (${f1(norm)} °C)</span>`
     : `<span class="d cool">${delta>=-0.05?"conforme":"sous"} la normale (${f1(norm)} °C)</span>`;
-  const html=`<div class="seg"><span class="ttl">${label}</span>
+  const html=`<div class="seg"><span class="ttl">${label} · ${ext.hour}h</span>
     <span class="t">${Math.round(ext.temp)}<span class="u"> °C</span></span>
     ${dtxt} ${dist}</div>`;
   return {html, mapHtml, map};
 }
-
+ 
 /* ---------- recherche / sélection ---------- */
 let sugTimer=null, sugItems=[], sugIdx=-1;
 $("#q").addEventListener("input",e=>{
@@ -719,14 +730,14 @@ $("#q").addEventListener("keydown",e=>{
   else if(e.key==="Escape"){ hideSug(); }
 });
 function markSug(){ $("#suggest").querySelectorAll("div").forEach((el,i)=>el.classList.toggle("active",i===sugIdx)); }
-
+ 
 async function triggerSearch(){
   const v=$("#q").value.trim(); if(!v) return;
   try{ const r=await geocode(v); if(r.length) select(r[0]); else status("Ville introuvable. Vérifiez l'orthographe.",true); }
   catch(_){ status("Échec du géocodage. Réessayez.",true); }
 }
 $("#go").addEventListener("click",triggerSearch);
-
+ 
 function select(r){
   if(!r) return;
   hideSug();
@@ -741,7 +752,7 @@ function select(r){
   $("#modes").hidden=false; $("#crit").hidden=false;
   show(S.mode);
 }
-
+ 
 /* onglets */
 $("#modes").querySelectorAll("button").forEach(b=>{
   b.addEventListener("click",()=>{
@@ -749,7 +760,7 @@ $("#modes").querySelectorAll("button").forEach(b=>{
     b.classList.add("on"); S.mode=b.dataset.mode; show(S.mode);
   });
 });
-
+ 
 /* critère de distance : re-rendu depuis le cache (aucun nouvel appel API) */
 $("#crit").querySelectorAll("button").forEach(b=>{
   b.addEventListener("click",async ()=>{
@@ -763,7 +774,7 @@ $("#crit").querySelectorAll("button").forEach(b=>{
     }catch(e){ status("Erreur : "+e.message,true); }
   });
 });
-
+ 
 async function show(mode){
   if(S.lat===null) return;
   if(mode==="live"){
@@ -776,7 +787,7 @@ async function show(mode){
     else setTimeout(()=>FC_MAPS.forEach(m=>m.invalidateSize()),60);
   }
 }
-
+ 
 document.addEventListener("click",e=>{ if(!e.target.closest(".search")) hideSug(); });
 </script>
 </body>
